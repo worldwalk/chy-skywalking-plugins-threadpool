@@ -66,5 +66,7 @@ mvn clean package -DskipTests -Dcheckstyle.skip=true
 所以需要使用我提供的`apm-agent.jar`来让`ThreadPoolExecutor`不要过早加载
 
 具体细节可以看 `org.apache.skywalking.apm.agent.SkyWalkingAgent`
+>>> 主要是在WriterFactory.java中以 SnifferConfigInitializer.isPulginInitCompleted() 来控制，只有初始化之后才开始打日志。
+
 
 
